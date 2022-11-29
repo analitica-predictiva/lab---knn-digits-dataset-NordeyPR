@@ -50,7 +50,7 @@ def pregunta_02():
     # estratificados. La semilla del generador de números aleatorios es 42.
     # El tamaño del test es del 20%
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0,2, random_state= 42, stratify=y
+        X, y, test_size=0.2, random_state= 42, stratify=y
     )
 
     # Cree un clasificador con siete vecinos
@@ -84,7 +84,7 @@ def pregunta_03():
     # Divida los datos de entrenamiento y prueba. Los conjuntos de datos están
     # estratificados. La semilla del generador de números aleatorios es 42.
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size= 0,2, random_state= 42, stratify=y
+        X, y, test_size= 0.2, random_state= 42, stratify=y
     )
 
     # Inicialice los arreglos para almacenar la precisión para las muestras de
@@ -105,7 +105,7 @@ def pregunta_03():
         train_accuracy[i] = knn.score(X_train, y_train)
 
         # Calcule la precisión para el conjunto de datos de prueba
-        test_accuracy[i] = knn.score(X_train, y_train)
+        test_accuracy[i] = knn.score(X_test, y_test)
 
     # Almacenamiento de los resultados como un dataframe
     df = pd.DataFrame(
